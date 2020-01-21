@@ -1,0 +1,60 @@
+[push]
+	default = nothing
+[core]
+	ignorecase = false
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[user]
+	name = vrs
+	email = vivekrajeshsharma@gmail.com
+	username = vivekrsharma
+[branch]
+	autosetuprebase = always
+[rerere]
+	enabled = true
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[help]
+	autocorrect = 5
+
+# Allow overrides for local environment (like user)
+[include]
+	path = .gitconfig_local
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[http "https://gopkg.uberinternal.com"]
+	followRedirects = true
+[http "https://gopkg.in"]
+	followRedirects = true
+
+[core]
+	excludesfile = ~/.gitignore_global
+
+[alias]
+	a  = add
+	b  = branch
+	ap = add -p
+	cb = checkout -b
+	ci = commit
+	co = checkout
+	d  = diff
+	ds = diff --stat
+	dc = diff --cached
+	dw = diff -w
+	l  = log --graph
+	lp = log --graph --first-parent
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	st = status
+  # log with local times
+	llog = log --date=local
+  # what files are changed
+	changes  = diff --name-status -r
+
