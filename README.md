@@ -12,3 +12,6 @@
 |Bind + p                  | previous window          |
 |Bind + option + arrow keys| resize pane              |
 |Bind + arrow keys         | navigation between panes |
+|Bind + :detach         | detach tmux session without killing |
+|Bind + ]         | enable mouse scrolling |
+
